@@ -17,8 +17,8 @@ fun listaItens(){
         println("A lista está vazia.")
     } else {
         println("Itens na lista:")
-        lista.forEachIndexed { index, item -> 
-            println("${index + 1}. $item") 
+        lista.forEachIndexed { 
+            index, item -> println("${index + 1}. $item") 
         }
     }
 }
