@@ -1,5 +1,17 @@
 var lista: MutableList<String> = mutableListOf()
 
+fun adicionarItemInfinito(){
+    while(true){
+        println("Deixe em branco para voltar ao menu anterior")
+        print("Informe a descrição do Item: ")
+        val item = readln()
+        if (item == ""){
+            return
+        }
+        lista.add(item)
+    }
+}
+
 fun adicionarItem(){
     print("Digite o item que deseja adicionar: ")
     val item = readln()
@@ -43,14 +55,16 @@ fun showMenu(){
         println("Menu:")
         println("1. Adcionar item")
         println("2. Lista item")
-        println("3.Excluir item")
-        println("4. Sair")
+        println("3. Excluir item")
+        println("4. Adicionar item Infinitamente")
+        println("0. Sair")
         print("Opção:")
         var opcao = readln()
         when(opcao){
             "1" -> adicionarItem()
             "2" -> listaItens()
             "3" -> removerItem()
+            "4" -> adicionarItemInfinito()
             "0" -> break
             else -> println("Opção invalida!")   
         }
