@@ -3,8 +3,13 @@ var lista: MutableList<String> = mutableListOf()
 fun adicionarItem(){
     print("Digite o item que deseja adicionar: ")
     val item = readln()
-    lista.add(item)
-    println("Item '$item' adicionado com sucesso!")
+
+    if (item.isBlank()) {
+        println("Erro: O item não pode estar vazio!")
+    } else {
+        lista.add(item)
+        println("Item '$item' adicionado com sucesso!")
+    }
 }
 
 fun listaItens(){
